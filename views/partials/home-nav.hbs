@@ -1,24 +1,19 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
             <h3 class="my-heading">IRON<span class="bg-main">MUSIC</span></h3>
         </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        {{!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars mfa-white"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <form class="form-inline my-2 my-lg-0 col-md-7">
-                <input class="myform-control mr-sm-2" type="search" placeholder="Find your favourite places and bands" aria-label="Search">
-                <button class="btn btn-light"><i class="fa fa-search"></i></button>
-            </form>
+        </button> --}}
+        {{!-- <div class="collapse navbar-collapse" id="navbarResponsive"> --}}
             <ul class="navbar-nav ml-auto">
-			    <li class="nav-link">
+			    {{!-- <li class="nav-link">
                     <a class="btn btn-primary btn-block btn-register" href="#">Create an Account</a>
-                </li>
+                </li> --}}
                 <li class="nav-link">
                     <form action="session/google" method="POST">
 						<button type="submit" class="btn btn-danger">
-        					<i class="fa fa-google-plus"></i> Login with Google</span>
+        					<i action="/sessions/google" method="post" class="fa fa-google-plus"></i> Login with Google</span>
 						</button>
 					</form>
                 </li>

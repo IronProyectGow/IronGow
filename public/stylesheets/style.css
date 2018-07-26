@@ -9,7 +9,7 @@
 header.masthead {
     position: relative;
     height: 100vh;
-    background: url('http://warp.la/wp-content/uploads/2017/04/tumblr_static_simple-light-scene-hands-concert-music-free-hd-340244.jpg') no-repeat center center;
+    background: url('https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2017/04/concert-truths-featured-040417.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -114,7 +114,7 @@ p.myp.text-center {
 }
 
 .mybg-music {
-    background: url('http://warp.la/wp-content/uploads/2017/04/tumblr_static_simple-light-scene-hands-concert-music-free-hd-340244.jpg') no-repeat center center fixed;
+    background: url('https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2017/04/concert-truths-featured-040417.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
