@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     email : String,
     photo : String,
     social: {
-        googleId: String,
+        googleId: String
     }
 }, { timestamps: true });
 

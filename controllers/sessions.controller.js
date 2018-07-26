@@ -1,7 +1,7 @@
 const passport = require('passport');
 
 module.exports.createWithIDPCallback = (req, res, next) => {
-    passport.authenticate(`${req.params.provider}-auth`, (error, user) => {
+    passport.authenticate('google-auth', (error, user) => {
     if (error) {
       next(error);
     } else {

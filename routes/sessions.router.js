@@ -10,7 +10,7 @@ router.post(
     })
 );
 
-router.get('/:provider/cb', sessionController.createWithIDPCallback);
+router.get('/google/cb', sessionController.createWithIDPCallback);
 
 module.exports = router; 
 
