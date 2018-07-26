@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 require('dotenv').config();
 
+=======
+>>>>>>> master
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+<<<<<<< HEAD
 const hbs = require('hbs');
 const session = require('express-session');
 const passport = require('passport')
@@ -18,6 +22,11 @@ const sessionsRouter = require('./routes/sessions.router');
 require('./configs/hbs.config');
 require('./configs/db.configs');
 require('./configs/passport.config').setup(passport);
+=======
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const session = require('express-session');
+>>>>>>> master
 
 const app = express();
 
