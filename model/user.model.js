@@ -7,8 +7,7 @@ const userSchema = new mongoose.Schema({
     social: {
         googleId: String
     }
-}, { timestamps: true });
+}, { timestamps: true, discriminatorKey: 'kind' });
 
 const User = mongoose.model('User', userSchema)
-
 module.exports = User;
