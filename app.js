@@ -53,7 +53,7 @@ app.use((req, res, next ) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/sessions', sessionsRouter)
+app.use('/auth', sessionsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

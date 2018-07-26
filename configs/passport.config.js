@@ -19,7 +19,7 @@ module.exports.setup = (passport) => {
     passport.use('google-auth', new GoogleStrategy({
         clientID: process.env.GOOGLE_AUTH_CLIENT_ID || '',
         clientSecret: process.env.GOOGLE_AUTH_CLIENT_SECRET || '',
-        callbackURL: process.env.GOOGLE_AUTH_CB || '/sessions/google/cb',
+        callbackURL: process.env.GOOGLE_AUTH_CB || '/auth/google/cb',
     }, authenticateOAuthUser));
 
    function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
