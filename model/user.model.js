@@ -4,8 +4,10 @@ const userSchema = new mongoose.Schema({
     name : String,
     email : String,
     photo : String,
-    googleID : String
-}, { timestamps });
+    social: {
+        googleId: String,
+    }
+}, { timestamps: true });
 
 const User = mongoose.model('User', userSchema)
 

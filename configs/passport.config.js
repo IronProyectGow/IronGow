@@ -2,9 +2,9 @@ const User = require('../model/user.model');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 module.exports.setup = (passport) => {
-    passport.serializeUser(user, next) => {
+    passport.serializeUser((user, next) => {
         next(null, user._id);
-    }
+    });
 
     passport.deserializeUser((id, next)=> {
         User.findById(id)
@@ -17,10 +17,10 @@ module.exports.setup = (passport) => {
     })
 
     passport.use('google-auth', new GoogleStrategy({
-        clientID: process.env.GOOGLE_AUTH_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_AUTH_CLIENT_SECRET,
-        callbackURL: process.env.GOOGLE_AUTH_CB,
-  }, authenticateOAuthUser));
+        clientID: process.env.GOOGLE_AUTH_CLIENT_ID || '',
+        clientSecret: process.env.GOOGLE_AUTH_CLIENT_SECRET || '',
+        callbackURL: process.env.GOOGLE_AUTH_CB || '/sessions/google/cb',
+    }, authenticateOAuthUser));
 
    function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
      let socialId = `${profile.provider}Id`;
@@ -33,7 +33,7 @@ module.exports.setup = (passport) => {
              name: profile.displayName,
              email: profile.emails[0].value,
              password: Math.random().toString(36).substring(7),
-             social: {
+             social:{
                [socialId]: profile.id
              }
            })
