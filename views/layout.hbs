@@ -9,8 +9,12 @@
     <title>IronMusic</title>
   </head>
   <body>
+    {{#if session}}
+      {{> logged_nav}}
+    {{else}}
+      {{> home_nav}} 
+    {{/if}}
 
-    {{> home_nav}}  
     {{error}}
 
     {{{body}}}
