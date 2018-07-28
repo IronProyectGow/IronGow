@@ -53,7 +53,7 @@ app.use((req, res, next ) => {
 
 app.use('/', indexRouter);
 app.use('/auth', sessionsRouter);
-app.use('/role_selection', usersRouter);
+app.use('/role-selection', usersRouter);
 //app.use('/bar', barRouter);
 
 // catch 404 and forward to error handler
@@ -63,6 +63,7 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+  console.error(err);
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

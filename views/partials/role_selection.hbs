@@ -1,9 +1,9 @@
 
-<form class="roles" method="POST" action="/profile">
-  <select name="kind" onchange="this.form.submit()">
-      <option value={{ROLE_USER}}>User</option>
-      <option value={{ROLE_ARTIST}}>Artist</option>
-      <option value={{ROLE_BAR}}>Bar</option>
+<form class="roles mt-5" method="POST" action="/role-selection">
+  <select name="role" onchange="this.form.submit()">
+      <option value="user">User</option>
+      <option value="artist">Artist</option>
+      <option value="bar">Bar</option>
   </select>
 </form>
 

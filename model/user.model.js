@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     photo : String,
     role: {
         type: String,
-        enum:  [ constants.ROLE_USER, constants.ROLE_ARTIST, constants.ROLE_BAR ],
+        enum:  [constants.ROLE_USER, constants.ROLE_ARTIST, constants.ROLE_BAR, ''],
         default: ''
     },
     social: {
