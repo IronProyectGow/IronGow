@@ -1,8 +1,11 @@
-const spotify = require("spotify-web-api-node");
 const express = require("express");
 const createError = require('http-errors');
 
-modulue.exports.doProfile = (req, res, next) => {
+module.exports.renderProfile = (req, res, next) => {
+    res.render('profile')
+}
+
+module.exports.doProfile = (req, res, next) => {
     const kind = req.body.kind;
     const user = req.user;
     const redirectUrl = '';

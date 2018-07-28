@@ -145,6 +145,9 @@ footer.footer{padding-top:1rem;padding-bottom:1rem}
   text-align: center;
 }
 
+/*--------------role selection --------*/
+
+
 /*-------------------responsive-----------------*/
 @media screen and (max-width: 520px) {
     ::placeholder {

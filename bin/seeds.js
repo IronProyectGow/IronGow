@@ -22,12 +22,12 @@ const Bar = require('../model/bar.model');
 //     gallery: ['ing']
 // })
 
-User.count()
-    .then(number => {
-        console.log('Users:', number)
-    })
+// User.count()
+//     .then(number => {
+//         console.log('Users:', number)
+//     })
 
-Artist.count()
-    .then(number => {
-        console.log('Artist:', number)
-    })
+// Artist.count()
+//     .then(number => {
+//         console.log('Artist:', number)
+//     })
