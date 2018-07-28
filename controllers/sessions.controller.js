@@ -14,7 +14,6 @@ module.exports.createWithIDPCallback = (req, res, next) => {
       });
     }
   })(req, res, next);
-  console.log(res)
 }
 
 
