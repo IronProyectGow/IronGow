@@ -3,7 +3,7 @@ require('../configs/db.configs');
 
 const User = require('../model/user.model');
 const Artist = require('../model/artist.model');
-const Hall = require('../model/hall.model');
+const Bar = require('../model/bar.model');
 
 // User.create({
 //     name: 'tutu',

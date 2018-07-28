@@ -1,0 +1,7 @@
+<form class="form-inline" method="POST" action="/profile">
+  <select name="kind" onchange="this.form.submit()">
+      <option value={{ROLE_USER}}>User</option>
+      <option value={{ROLE_ARTIST}}>Artist</option>
+      <option value={{ROLE_BAR}}>Bar</option>
+  </select>
+</form>

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('./user.model');
 
-const hallSchema = new mongoose.Schema({
+const barSchema = new mongoose.Schema({
     description: String,
     location: String, 
     capacity: Number,
@@ -9,8 +9,8 @@ const hallSchema = new mongoose.Schema({
 
 }, { timestamps: true, discriminatorKey: 'kind' });
 
-const Hall = User.discriminator('Hall', hallSchema)
-module.exports = Hall;
+const Bar = User.discriminator('Bar', barSchema)
+module.exports = Bar;
 
 // nombre
 // descripción
