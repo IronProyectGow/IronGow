@@ -29,7 +29,7 @@ module.exports.setup = (passport) => {
    function authenticateOAuthUser(req, accessToken, refreshToken, profile, next) {
      User.findOne({ 'social.googleId': profile.id })
        .then(user => {
-         if (user) {
+         if (user) {  
            next(null, user);
          } else {
            const userData = {

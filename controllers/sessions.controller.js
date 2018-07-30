@@ -9,7 +9,7 @@ module.exports.createWithIDPCallback = (req, res, next) => {
         if (error) {
           next(error)
         } else {
-          res.redirect('/') //esto hay que corregirlo
+            res.redirect('/') //esto hay que corregirlo
         }
       });
     }
