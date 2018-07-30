@@ -4,7 +4,7 @@ const router = express.Router();
 const userController = require('../controllers/user.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
 
-router.get('/', userController.renderProfile);
-router.post('/', userController.doProfile);
+//router.get('/', userController.renderProfile);
+
 
 module.exports = router

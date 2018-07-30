@@ -13,7 +13,9 @@ const passport = require('passport')
 
 const indexRouter = require('./routes/index.router');
 const sessionsRouter = require('./routes/sessions.router');
-const usersRouter = require('./routes/user.routes');
+const usersRouter = require('./routes/user.router');
+const artistsRouter = require('./routes/artist.router');
+const barRouter = require('./routes/bar.router');
 
 require('./configs/hbs.config');
 require('./configs/db.configs');
@@ -54,7 +56,8 @@ app.use((req, res, next ) => {
 app.use('/', indexRouter);
 app.use('/auth', sessionsRouter);
 app.use('/role-selection', usersRouter);
-//app.use('/bar', barRouter);
+app.use('/artists', artistsRouter);
+app.use('/bars', barRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
