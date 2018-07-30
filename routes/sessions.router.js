@@ -15,5 +15,7 @@ router.post('/google',
 
 router.get('/google/cb', sessionController.createWithIDPCallback);
 
+router.get('/delete', sessionController.delete)
+
 module.exports = router; 
 

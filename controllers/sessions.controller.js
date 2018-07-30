@@ -9,11 +9,16 @@ module.exports.createWithIDPCallback = (req, res, next) => {
         if (error) {
           next(error)
         } else {
-          res.redirect('/role-selection') //esto hay que corregirlo
+          res.redirect('/') //esto hay que corregirlo
         }
       });
     }
   })(req, res, next);
+}
+
+module.exports.delete = (req, res, next) => {
+  req.logout();
+  res.redirect('/');
 }
 
 
