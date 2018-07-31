@@ -1,7 +1,20 @@
 const express = require("express");
 const createError = require('http-errors');
 const constants = require('../constants');
+const mongoose = require('mongoose');
+const User = require('../model/user.model');
 
-// module.exports.renderProfile = (req, res, next) => {
-//     res.render('profile')
-// }
+module.exports.profile = (req, res, next) => {
+    console.log(req)
+    let id = req.user._id
+    User.findById(id)
+    .then(user => {
+        res.render('partials/users/user', {
+            user
+        })
+    })
+    .catch(error => {
+        next(error)
+    })
+    
+}
