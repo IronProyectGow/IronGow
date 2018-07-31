@@ -55,7 +55,7 @@ app.use((req, res, next ) => {
 
 app.use('/', indexRouter);
 app.use('/auth', sessionsRouter);
-app.use('/role-selection', usersRouter);
+app.use('/users', usersRouter);
 app.use('/artists', artistsRouter);
 app.use('/bars', barRouter);
 

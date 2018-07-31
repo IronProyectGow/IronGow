@@ -32,10 +32,13 @@ module.exports.setup = (passport) => {
          if (user) {  
            next(null, user, true);
          } else {
+             console.log(profile);
+             
            const userData = {
              name: profile.displayName,
              email: profile.emails[0].value,
              role: req.session.role,
+             photo: profile.photos[0].value,
              social: {
                googleId: profile.id
              }
