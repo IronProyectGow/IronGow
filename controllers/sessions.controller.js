@@ -1,7 +1,7 @@
 const passport = require('passport');
 
 module.exports.createWithIDPCallback = (req, res, next) => {
-    passport.authenticate('google-auth', (error, user) => {
+    passport.authenticate('google-auth', (error, user, firstLogin) => {
     if (error) {
       next(error);
     } else {
@@ -9,7 +9,11 @@ module.exports.createWithIDPCallback = (req, res, next) => {
         if (error) {
           next(error)
         } else {
+          if(firstLogin && firstLogin === true){
+            res.redirect('/role_selection')
+          } else {
             res.redirect('/') //esto hay que corregirlo
+          }
         }
       });
     }

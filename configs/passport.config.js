@@ -30,7 +30,7 @@ module.exports.setup = (passport) => {
      User.findOne({ 'social.googleId': profile.id })
        .then(user => {
          if (user) {  
-           next(null, user);
+           next(null, user, true);
          } else {
            const userData = {
              name: profile.displayName,
@@ -57,7 +57,7 @@ module.exports.setup = (passport) => {
 
            return user.save()
              .then(user => {
-               next(null, user);
+               next(null, user, false);
              });
          }
        })
