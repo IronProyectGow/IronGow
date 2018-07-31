@@ -3,9 +3,10 @@
 
 <div class="card m-5" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">{{Bar.name}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{Bar.description}}</h6>
-    <p class="card-text">{{Bar.gallery}}</p>
+    <h5 class="card-title">{{bar.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{bar.description}}</h6>
+    <img src="{{ bar.gallery }}" alt="picture">
+    <a href="/bars/{{bar.id}}/edit" class="card-link text-warning">Edit</a>
     <a href="/bars" class="card-link">Go back</a>
   </div>
 </div>
