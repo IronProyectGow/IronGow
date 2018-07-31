@@ -1,18 +1,16 @@
 
 <div class="card m-5">
   <div class="card-body m-5">
-    <h5 class="card-title">
+    <h5 class="card-title m-5">
       {{ user.name }}
     </h5>
 
     <h6 class="card-subtitle mb-2 text-muted">
       {{ user.email }}      
     </h6>
-    <p class="card-text">
-      {{ user.photo }}
-    </p>
+    <img src="{{ user.photo }}" alt="picture">
 
-    <a href="#" class="card-link text-warning">Edit</a>
+    <a href="/users/{{user.id}}/edit" class="card-link text-warning">Edit</a>
     <hr>
   </div>
 </div>
