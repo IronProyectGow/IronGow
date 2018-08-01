@@ -124,6 +124,14 @@ p.myp.text-center {
     animation: floating-arrow 1s infinite ease-in-out 0s;
 }
 
+.show-on-hover:hover > ul.dropdown-menu {
+    display: block;    
+}
+
+.btn-danger {
+    width: 100%;
+}
+
 @keyframes floating-arrow {
   from {
       -webkit-transform: translateY(0);

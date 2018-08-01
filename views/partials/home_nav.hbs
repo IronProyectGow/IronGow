@@ -1,40 +1,44 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
+        <a class="navbar-brand" href="/">
             <h3 class="my-heading">IRON<span class="bg-main">MUSIC</span></h3>
         </a>
-        {{!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="fa fa-bars mfa-white"></span>
-        </button> --}}
-        {{!-- <div class="collapse navbar-collapse" id="navbarResponsive"> --}}
-            <ul class="navbar-nav ml-auto">
-			    {{!-- <li class="nav-link">
-                    <a class="btn btn-primary btn-block btn-register" href="#">Create an Account</a>
-                </li> --}}
-                <li class="nav-link">
-                    <form action="/auth/google" method="POST">
-                        <input type="hidden" name="role" value="artist">
-						<button type="submit" class="btn btn-danger">
-        					<i class="fa fa-google-plus"></i> Artist </span>
-						</button>
-					</form>
-                </li>
-                <li class="nav-link">
+
+        <div class="btn-group show-on-hover">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-google-plus"></i> Create an account <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+                        <li class="nav-link">
                     <form action="/auth/google" method="POST">
                         <input type="hidden" name="role" value="user">
 						<button type="submit" class="btn btn-danger">
-        					<i class="fa fa-google-plus"></i> User </span>
+        					<i class="fa fa-google-plus"></i> Fan Profile </span>
 						</button>
 					</form>
                 </li>
-                <li class="nav-link">
+                
+            <li class="nav-link">
+                    <form action="/auth/google" method="POST">
+                        <input type="hidden" name="role" value="artist">
+						<button type="submit" class="btn btn-danger">
+        					<i class="fa fa-google-plus"></i> Artist Profile </span>
+						</button>
+					</form>
+                </li>
+
+            <li class="nav-link">
                     <form action="/auth/google" method="POST">
                         <input type="hidden" name="role" value="bar">
 						<button type="submit" class="btn btn-danger">
-        					<i class="fa fa-google-plus"></i> Bar </span>
+        					<i class="fa fa-google-plus"></i> Music Bar Profile</span>
 						</button>
 					</form>
                 </li>
-             </ul>
+          </ul>
+        </div>
          </div>
      </div>
  </nav>
+
+
