@@ -12,7 +12,7 @@ let artists = [{
     albums : [
         {name : 'My first Album', year : 1979}
     ],
-    gallery : ['https://www.google.es/search?q=whitney+houston&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjAnpynkcfcAhUPUlAKHfcJB3gQ_AUICigB&biw=1280&bih=703#imgrc=sPb_0CAy3cSz0M:']
+    gallery : ['https://pbs.twimg.com/profile_images/378800000698555148/4cb16163b698dfdb827a9b4053a60afd.jpeg']
 },
 {
     name : 'Whitney Houston',
@@ -21,7 +21,7 @@ let artists = [{
     albums : [
         {name : 'My first Album', year : 1979}
     ],
-    gallery : ['https://www.google.es/search?q=whitney+houston&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjAnpynkcfcAhUPUlAKHfcJB3gQ_AUICigB&biw=1280&bih=703#imgrc=sPb_0CAy3cSz0M:']
+    gallery : ['https://pbs.twimg.com/profile_images/378800000698555148/4cb16163b698dfdb827a9b4053a60afd.jpeg']
 }]
 
 Artist.create(artists)

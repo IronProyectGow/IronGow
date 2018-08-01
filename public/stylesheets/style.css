@@ -29,6 +29,10 @@ header.masthead .overlay{position:absolute;background-color:#212529;height:100%;
         font-size: 4rem;
     }
 }
+.title {
+    margin-top: 7%;
+    margin-left: 5%;
+}
 
 .latest-music{padding-top:7rem;padding-bottom:7rem}
 .myform-control {
@@ -124,6 +128,18 @@ p.myp.text-center {
     animation: floating-arrow 1s infinite ease-in-out 0s;
 }
 
+.show-on-hover:hover > ul.dropdown-menu {
+    display: block;    
+}
+
+.btn-danger {
+    width: 100%;
+}
+
+.fa-user{
+    color: #1fc6d8 ;
+}
+
 @keyframes floating-arrow {
   from {
       -webkit-transform: translateY(0);
@@ -145,6 +161,17 @@ footer.footer{padding-top:1rem;padding-bottom:1rem}
   text-align: center;
 }
 
+textarea.form-control{
+    height:100px;
+    width: 50rem;
+}
+input.form-control{
+    width: 20rem;
+}
+
+.list-container{
+    display: inline-flex;
+}
 /*--------------role selection --------*/
 
 
