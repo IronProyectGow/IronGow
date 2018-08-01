@@ -30,8 +30,8 @@ header.masthead .overlay{position:absolute;background-color:#212529;height:100%;
     }
 }
 .title {
-    margin-top: 7%;
-    margin-left: 5%;
+    margin-top: 5%;
+    margin-left: 2%;
 }
 
 .latest-music{padding-top:7rem;padding-bottom:7rem}
@@ -172,6 +172,7 @@ input.form-control{
 .list-container{
     display: inline-flex;
 }
+
 /*--------------role selection --------*/
 
 

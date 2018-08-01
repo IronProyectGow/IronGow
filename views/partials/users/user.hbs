@@ -1,16 +1,12 @@
 
-<div class="card m-5">
-  <div class="card-body m-5">
-    <h5 class="card-title m-5">
-      {{ user.name }}
-    </h5>
-
-    <h6 class="card-subtitle mb-2 text-muted">
-      {{ user.email }}      
-    </h6>
-    <img src="{{ user.photo }}" alt="picture">
-
-    <a href="/users/{{user.id}}/edit" class="card-link text-warning">Edit</a>
-    <hr>
+<h3 class="title">My profile</h3>
+<div class="card bg-light m-3" style="max-width: 15rem;">
+  <div class="card-header">{{ user.email }}  </div>
+  <div class="card-body">
+    <div class="text-left">
+      <img src="{{ user.photo }}" alt="picture" class="img-thumbnail mb-1">
+    </div>
+    <p class="card-title text-cente">{{ user.name }}</p>
   </div>
 </div>
+
