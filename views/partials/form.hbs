@@ -3,3 +3,8 @@
   {{!-- {{> artist/artist_form artist }} --}}
 
   {{> bars/bar_form bar }}
+    {{#if artist}}
+  {{> artists/artist_form artist }}
+  {{else}}
+  {{> bars/bar_form bar }}
+  {{/if}}

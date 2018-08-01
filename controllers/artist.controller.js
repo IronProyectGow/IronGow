@@ -14,3 +14,44 @@ module.exports.list = (req, res, next) => {
     });
 }; 
 
+module.exports.detail = (req, res, next) => {
+    const id = req.params.id;
+
+    Artist.findById(id)
+        .then(artist => {
+            res.render('partials/artists/artist', { artist })
+        })
+        .catch(error => next(error));
+}
+
+module.exports.edit = (req, res, next) => {
+    const id = req.params.id;
+
+    Artist.findById(id)
+        .then(artist => {
+            if (artist) {
+                res.render('partials/form', { artist })
+            } else {
+                next(createError(404));
+            }
+        })
+        .catch(error => next(error));
+}
+
+module.exports.doEdit = (req, res, next) => {
+    const id = req.params.id;
+
+    const updateSet = {
+        description: req.body.description
+    }
+
+    Artist.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
+        .then(artist => {
+            if (artist) {
+                res.redirect(`/artists/${id}`)
+            } else {
+                next(createError(404));
+            }
+        })
+        .catch(error => next(error));
+}
