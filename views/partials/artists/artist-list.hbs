@@ -1,25 +1,11 @@
 
 <h1 class="title">Artists List</h1>
 
+<div class="list-container">
 {{#each artists as |artist|}}
-<div class="card-group">
-    <div class="row">
-        <div class="col- ml-5">
-          <div class="card w-60">
-         <h4 class="card-header bg-dark text-uppercase text-white">{{artist.name}}
-            <div class="float-right">
-                <a class="btn btn-raised btn-light ml-3" href="/artists/{{artist.id}}">
-                    <i class="fa fa-user"></i>
-                </a>
-            </div>
-        </h4>
-        <div class="card-body">
-          <img src='{{artist.gallery}}' class="img-thumbnail mb-2" alt="avatar"/>
-          <p class="card-text text-center"><small>{{artist.genre}}</small></p>
-          <p class="card-text text-center ">{{artist.description}}</p>
-       </div>
-     </div>
-    </div>
-  </div>
-</div>
+    {{> artists/artistsdetails}}
 {{/each}}
+</div>
+
+
+
