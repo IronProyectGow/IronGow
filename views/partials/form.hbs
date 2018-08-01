@@ -1,10 +1,10 @@
 <h1 class="mb-4">My profile</h1>
 
-    {{#if artist}}
-  {{> artists/artist_form artist }}
-
-  {{else}}
+  {{!-- {{> artist/artist_form artist }} --}}
 
   {{> bars/bar_form bar }}
-
+    {{#if artist}}
+  {{> artists/artist_form artist }}
+  {{else}}
+  {{> bars/bar_form bar }}
   {{/if}}
