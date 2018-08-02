@@ -173,6 +173,16 @@ input.form-control{
     display: inline-flex;
 }
 
+.fa-angle-left{
+    content: "\f104";
+    font-size: xx-large;
+    color: skyblue;
+    border: 1px solid;
+    border-radius: 13%;
+    padding: 20px;
+    margin-left: 50px;
+}
+
 /*--------------role selection --------*/
 
 
