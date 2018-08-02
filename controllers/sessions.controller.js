@@ -10,7 +10,7 @@ module.exports.createWithIDPCallback = (req, res, next) => {
           next(error)
         } else {
           if(firstLogin && firstLogin === true){
-            res.redirect('/role_selection')
+            res.redirect('/?rt')
           } else {
             res.redirect('/') //esto hay que corregirlo
           }
