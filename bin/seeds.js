@@ -4,6 +4,7 @@ require('../configs/db.configs');
 const User = require('../model/user.model');
 const Artist = require('../model/artist.model');
 const Bar = require('../model/bar.model');
+const Event = require('../model/event.model');
 
 let artists = [{
     name : 'Whitney Houston',
@@ -49,6 +50,8 @@ Artist.create(artists)
     }
 ]
 
+
+
 Bar.create(bars)
     .then((result) => {
         console.log('created')
@@ -56,3 +59,6 @@ Bar.create(bars)
     .catch((err) => {
         console.log(err);
     })
+
+
+

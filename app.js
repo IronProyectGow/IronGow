@@ -15,7 +15,8 @@ const indexRouter = require('./routes/index.router');
 const sessionsRouter = require('./routes/sessions.router');
 const usersRouter = require('./routes/user.router');
 const artistsRouter = require('./routes/artist.router');
-const barRouter = require('./routes/bar.router');
+const barsRouter = require('./routes/bar.router');
+const eventsRouter = require('./routes/event.router');
 
 require('./configs/hbs.config');
 require('./configs/db.configs');
@@ -57,7 +58,8 @@ app.use('/', indexRouter);
 app.use('/auth', sessionsRouter);
 app.use('/users', usersRouter);
 app.use('/artists', artistsRouter);
-app.use('/bars', barRouter);
+app.use('/bars', barsRouter);
+app.use('/events', eventsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

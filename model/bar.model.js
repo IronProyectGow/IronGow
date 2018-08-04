@@ -6,6 +6,10 @@ const barSchema = new mongoose.Schema({
     address: String, 
     capacity: Number,
     gallery: [String],
+    // events: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Event'
+    // }]
     // location: {
     //     type: {
     //         type: String, // Don't do `{ location: { type: String } }`
@@ -18,6 +22,7 @@ const barSchema = new mongoose.Schema({
     //         required: true
     //     }
     // }
+
 
 }, { timestamps: true, discriminatorKey: 'kind' });
 
