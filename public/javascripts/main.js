@@ -10,8 +10,10 @@ window.onload = () => {
 
     const map = new google.maps.Map(
         document.getElementById('map'), {
-            zoom: 4,
+            zoom: 15,
             center: bar
         });
+    
+    const marker = new google.maps.Marker({position: bar, map: map});
 }
 
