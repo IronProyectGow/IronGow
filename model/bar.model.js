@@ -23,7 +23,6 @@ const barSchema = new mongoose.Schema({
     //     }
     // }
 
-
 }, { timestamps: true, discriminatorKey: 'kind' });
 
 const Bar = User.discriminator('Bar', barSchema)
