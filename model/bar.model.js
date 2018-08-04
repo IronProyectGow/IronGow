@@ -4,7 +4,7 @@ const User = require('./user.model');
 const barSchema = new mongoose.Schema({
     description: String,
     address: String, 
-    capacity: String,
+    capacity: Number,
     gallery: [String],
     // location: {
     //     type: {
