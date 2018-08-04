@@ -10,7 +10,6 @@ const session = require('express-session');
 const passport = require('passport')
 
 
-
 const indexRouter = require('./routes/index.router');
 const sessionsRouter = require('./routes/sessions.router');
 const usersRouter = require('./routes/user.router');
