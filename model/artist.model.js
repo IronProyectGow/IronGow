@@ -3,7 +3,7 @@ const User = require('./user.model');
 
 const artistSchema = new mongoose.Schema({
     description: String,
-    genre: [String],
+    genre: String,
     albums: [{
         name : String,
         year : Number

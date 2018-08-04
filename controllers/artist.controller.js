@@ -42,12 +42,14 @@ module.exports.doEdit = (req, res, next) => {
     const id = req.params.id;
 
     const updateSet = {
-        description: req.body.description
+        description: req.body.description,
+        genre: req.body.genre
     }
 
     Artist.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
         .then(artist => {
             if (artist) {
+                console.log('BODY', req.body)
                 res.redirect(`/artists/${id}`)
             } else {
                 next(createError(404));
