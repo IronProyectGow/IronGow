@@ -10,3 +10,8 @@ $(document).ready(function(){
         }
     );
 });
+
+$("form-control").click(function() {
+    console.log("hola");
+    $("form-control").toggleClass("is-valid");  
+})

@@ -58,12 +58,22 @@ module.exports.doEdit = (req, res, next) => {
     Bar.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
         .then(bar => {
             if (bar) {
-                res.redirect(`/bars/${id}`)
+                res.redirect('partials/form')
             } else {
                 next(createError(404));
             }
         })
-        .catch(error => next(error));
+        .catch(error => {
+            console.log(error.errors);
+            if (error instanceof mongoose.Error.ValidationError) {
+                res.render('partials/form', {
+                    bar: req.body,
+                    errors: error.errors
+                });
+            } else {
+                next(error);
+            }
+    })
 }
 
 module.exports.createEvent = (req, res, next) => {
@@ -84,7 +94,3 @@ module.exports.createEvent = (req, res, next) => {
         })
         .catch(error => { next(error); })
 }
-
-
-
-

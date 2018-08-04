@@ -49,11 +49,20 @@ module.exports.doEdit = (req, res, next) => {
     Artist.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
         .then(artist => {
             if (artist) {
-                console.log('BODY', req.body)
                 res.redirect(`/artists/${id}`)
             } else {
                 next(createError(404));
             }
         })
-        .catch(error => next(error));
+        .catch(error => {
+            console.log(error.errors);
+            if (error instanceof mongoose.Error.ValidationError) {
+                res.render('partials/form', {
+                    artist: req.body,
+                    errors: error.errors
+                });
+            } else {
+                next(error);
+            }
+    })
 }

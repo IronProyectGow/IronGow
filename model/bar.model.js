@@ -2,9 +2,19 @@ const mongoose = require('mongoose');
 const User = require('./user.model');
 
 const barSchema = new mongoose.Schema({
-    description: String,
-    address: String, 
-    capacity: Number,
+    description: {
+        type: String,
+        required: 'Description is required',
+    },
+    address: {
+        type: String,
+        required: 'Address is required',
+        unique: true
+    },
+    capacity: {
+        type: Number,
+        required: 'Capacity is required',
+    },
     gallery: [String],
     // events: [{
     //     type: mongoose.Schema.Types.ObjectId,
