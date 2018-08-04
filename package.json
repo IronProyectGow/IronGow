@@ -2,6 +2,9 @@
   "name": "irongow",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "10.4.1"
+  },
   "scripts": {
     "dev": "DEBUG=ex-social-auth:* nodemon -e hbs,js --inspect ./bin/www",
     "start": "node ./bin/www",
