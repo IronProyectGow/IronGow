@@ -1,7 +1,8 @@
+require('dotenv');
 const mongoose = require('mongoose');
 
 const DB_NAME = 'ironGow'
-const MONGODB_URI = `mongodb://localhost:27017/${DB_NAME}`;
+const MONGODB_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGODB_URI)
     .then(() => {
@@ -10,3 +11,7 @@ mongoose.connect(MONGODB_URI)
     .catch(error => {
         console.error('Database connection error:', error);
     });
+
+
+
+
