@@ -5,7 +5,11 @@ const barSchema = new mongoose.Schema({
     description: String,
     location: String, 
     capacity: Number,
-    gallery: [String]
+    gallery: [String],
+    events: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Event'
+    }]
 
 }, { timestamps: true, discriminatorKey: 'kind' });
 

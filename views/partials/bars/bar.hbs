@@ -9,4 +9,9 @@
   <a href="/bars/{{bar.id}}/edit" class="btn btn-outline-warning btn-sm">Edit</a>
 </div>
 
+<div>
+  {{> events/event_list event}}
+</div>
+
+<a href='/bars/{{bar.id}}/createEvent' class="card-link ml-5">Create Event</a>
 <a href="/bars" class="card-link ml-5">Go back</a>
