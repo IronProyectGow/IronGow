@@ -18,8 +18,17 @@ module.exports.detail = (req, res, next) => {
     const id = req.params.id;
 
     Bar.findById(id)
+        //.populate('events')
         .then(bar => {
-            res.render('partials/bars/bar', { bar })
+            Event.find({'bar': id})
+                .then(events => {
+                    if(events) {
+                        res.render('partials/bars/bar', {bar, events})
+                    } else {
+                        res.render('partials/bars/bar', { bar })
+                    }
+                })
+
         })
         .catch(error => next(error));
 }
@@ -61,7 +70,7 @@ module.exports.createEvent = (req, res, next) => {
 
 
     Bar.findById(id)
-        .populate('events')
+
         .then( bar => {
             if (bar) {
                 res.render('partials/event_edit', {

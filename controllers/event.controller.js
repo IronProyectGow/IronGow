@@ -20,12 +20,9 @@ module.exports.doCreateBarEvent = (req, res, next) => {
 
                 event.save()
                     .then(() => {
-                        bar.events.push(event);
-
                         return event.save();
                     })
                     .then(()=> {
-                        console.log(bar)
                         res.redirect(`/bars/${id}`)
                     })
                     .catch(error => {next(error);})
@@ -33,5 +30,23 @@ module.exports.doCreateBarEvent = (req, res, next) => {
                 error => { next(error);}
             }
         })
+}
+
+module.exports.detail = (req, res, next) => {
+    const id = req.params.id;
+
+    Event.findById(id)
+        .then( event => {
+            Bar.findById(event.bar)
+                .then(bar => {
+                    if (bar) {
+                        res.render('partials/events/event', { event, bar })
+                    } else {
+                        res.render('partials/events/event', { event })
+                    }
+                })
+
+        })
+        .catch(error => {next(error);})
 }
 
