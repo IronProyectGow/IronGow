@@ -51,7 +51,8 @@ module.exports.doEdit = (req, res, next) => {
     const id = req.params.id;
 
     const updateSet = {
-        description: req.body.description
+        description: req.body.description, 
+        capacity: req.body.capacity
     }
 
     Bar.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
