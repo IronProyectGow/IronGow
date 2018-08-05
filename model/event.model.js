@@ -1,13 +1,23 @@
 const mongoose = require('mongoose');
 
 const eventSchema = new mongoose.Schema({
-    name: String,
-    date: [Date],
-    price: String,
+    name: {
+        type: String,
+        required: 'Event name is required',
+    },
+    date: {
+        type: [Date],
+        required: 'Date is required'
+    },
+    price: {
+        type: String,
+        required: 'Price is required'
+    },
     bar: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'bar',
-    }
+        required: 'Bar is required'
+    },
 
 }, { timestamps: true });
 

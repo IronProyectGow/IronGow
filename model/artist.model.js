@@ -2,8 +2,14 @@ const mongoose = require('mongoose');
 const User = require('./user.model');
 
 const artistSchema = new mongoose.Schema({
-    description: String,
-    genre: String,
+    description: {
+        type: String,
+        required: 'Description is required',
+    },
+    genre: {
+        type: String,
+        required: 'Genre is required',
+    },
     albums: [{
         name : String,
         year : Number
