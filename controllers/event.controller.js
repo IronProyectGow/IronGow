@@ -87,3 +87,18 @@ module.exports.doEdit = (req, res, next) => {
     
 }
 
+module.exports.delete = (req, res, next) =>{
+    const id = req.params.id;
+
+    // Event.findById(id)
+    //     .then( event => {
+    //         Bar.findById(event.bar)
+    //             .then(event.remove()
+    //                 .then(()=>{
+    //                     res.redirect(`/bars/${event.bar}`)
+    //                 })
+    //             )
+    //             .catch( error => next(error));
+    //     })
+    //     .catch(error => {next(error);})
+}
