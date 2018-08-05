@@ -39,14 +39,26 @@ Artist.create(artists)
         description: 'Coqueto local con música en directo',
         location: 'Aquí al lao',
         capacity: 10,
-        gallery: 'https://www.esloqueveo.com/thumbnail.aspx?p_registro=145227&p=0&t=33'
+        gallery: 'https://www.esloqueveo.com/thumbnail.aspx?p_registro=145227&p=0&t=33',
+        location : {
+            type : 'Point',
+            coordinates : [
+                40.438985,
+                -3.691381  
+            ]}
     },
     {
         name : 'Sala Belén',
         description: 'Coqueto local con música en directo',
         location: 'Aquí al lao',
         capacity: 50,
-        gallery: 'https://www.esloqueveo.com/thumbnail.aspx?p_registro=145227&p=0&t=33'
+        gallery: 'https://www.esloqueveo.com/thumbnail.aspx?p_registro=145227&p=0&t=33',
+        location : {
+            type : 'Point',
+            coordinates : [
+                40.438985,
+                -3.691381
+            ]}
     }
 ]
 

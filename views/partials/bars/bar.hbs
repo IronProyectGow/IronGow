@@ -1,9 +1,17 @@
+
+
+
 <h3 class="title">{{bar.name}}</h3>
 <div class="card m-5" style="width: 18rem;">
   <div class="card-body">
     <img src="{{bar.gallery}}" alt="picture">
     <h6 class="title">{{bar.description}}</h6>
     <h6 class="card-subtitle m-2 text-muted">Capacity: <span>{{bar.capacity}}</span></h6>
+    <h1>{{bar.coordinates.[0]}}</h1>
+    <address>
+      <input type="text" id='latitude' value="{{ bar.location.coordinates.[0] }}"/>
+      <input type="text" id='longitude' value="{{ bar.location.coordinates.[1] }}"/>
+    </address>
   </div>
   <a href="/bars/{{bar.id}}/edit" class="btn btn-outline-warning btn-sm">Edit</a>
 </div>
@@ -11,6 +19,8 @@
 <div>
   {{> events/event_list }}
 </div>
+
+<div id='map'></div>
 
 <a href='/bars/{{bar.id}}/createEvent' class="card-link ml-5">Create Event</a>
 <a href="/bars" class="card-link ml-5">Go back</a>

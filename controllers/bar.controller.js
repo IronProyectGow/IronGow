@@ -52,7 +52,11 @@ module.exports.doEdit = (req, res, next) => {
 
     const updateSet = {
         description: req.body.description, 
-        capacity: req.body.capacity
+        capacity: req.body.capacity,
+        location: {
+            type: 'Point',
+            coordinates: [req.body.longitude, req.body.latitude]
+        }
     }
 
     Bar.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
@@ -69,9 +73,7 @@ module.exports.doEdit = (req, res, next) => {
 module.exports.createEvent = (req, res, next) => {
     const id = req.params.id;
 
-
     Bar.findById(id)
-
         .then( bar => {
             if (bar) {
                 res.render('partials/event_edit', {
@@ -84,7 +86,3 @@ module.exports.createEvent = (req, res, next) => {
         })
         .catch(error => { next(error); })
 }
-
-
-
-
