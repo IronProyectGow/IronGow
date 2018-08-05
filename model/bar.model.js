@@ -16,24 +16,22 @@ const barSchema = new mongoose.Schema({
         required: 'Capacity is required',
     },
     gallery: [String],
-    // events: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Event'
-    // }]
-    // location: {
-    //     type: {
-    //         type: String, // Don't do `{ location: { type: String } }`
-    //         enum: ['Point'], // 'location.type' must be 'Point'
-    //         required: true,
-    //         default: 'Point'
-    //     },
-    //     coordinates: {
-    //         type: [Number],
-    //         required: true
-    //     }
-    // }
+    location: {
+        type: {
+            type: String, 
+            enum: ['Point'], 
+            required: true,
+            default: 'Point'
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        }
+    }
 
 }, { timestamps: true, discriminatorKey: 'kind' });
+
+barSchema.index({ location: '2dsphere' });
 
 const Bar = User.discriminator('Bar', barSchema)
 module.exports = Bar;

@@ -1,3 +1,8 @@
+body{
+    padding-top: 100px;
+    margin-left: 5%;
+    background-color: black;
+}
 .navbar{
   background: #212529;
 }
@@ -29,10 +34,7 @@ header.masthead .overlay{position:absolute;background-color:#212529;height:100%;
         font-size: 4rem;
     }
 }
-.title {
-    margin-top: 8%;
-    margin-left: 3%;
-}
+
 
 .latest-music{padding-top:7rem;padding-bottom:7rem}
 .myform-control {
@@ -180,7 +182,6 @@ input.form-control{
     border: 1px solid;
     border-radius: 13%;
     padding: 20px;
-    margin-left: 50px;
 }
 
 /*--------------role selection --------*/
@@ -223,3 +224,8 @@ input.form-control{
          width:100%; 
     }
 }
+
+#map {
+  height: 400px;  
+  width: 100%;
+ }
