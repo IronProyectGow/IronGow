@@ -50,7 +50,7 @@ module.exports.edit = (req, res, next) => {
 module.exports.doEdit = (req, res, next) => {
     const id = req.params.id;
 
-    const updateSet = {
+    let updateSet = {
         description: req.body.description, 
         capacity: req.body.capacity,
         location: {

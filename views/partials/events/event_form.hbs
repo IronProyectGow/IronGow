@@ -1,10 +1,10 @@
 <h2 class="mt-5 ml-5">Create your event</h2>
 
-<form method='post' action='/events/createEvent' class="ml-5">
+<form method='post' class="ml-5">
   <input name="bar" value="{{bar.id}}" type="hidden">
   <div class="form-group">
     <label for="description">Name</label>
-    <textarea type="text" class="form-control" id="name" aria-describedby="text" name='name' placeholder="name" value="{{event.name}}"></textarea>
+    <textarea type="text" class="form-control" id="name" aria-describedby="text" name='name' placeholder="name">{{event.name}}</textarea>
   </div>
   <div class="form-group">
     <label for="capacity">Price</label>
@@ -12,3 +12,4 @@
   </div>
   <button type="submit" class="btn btn-primary mb-5">Submit</button>
 </form>
+<a href="/events/{{event.id}}" class="card-link ml-5">Go back</a>
