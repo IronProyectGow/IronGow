@@ -1,14 +1,22 @@
-<h3 class="title">{{event.name}}</h3>
-<div class="card m-5" style="width: 18rem;">
-  <div class="card-body">
-    <h6 class="title">{{bar.name}}</h6>
-    <h6 class="card-subtitle m-2 text-muted">Price <span>{{event.price}}</span></h6>
+<div class="container">
+  <h3 class="title mb-3">{{event.name}}</h3>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h6 class="title">{{bar.name}}</h6>
+      <h6 class="card-subtitle m-2 text-muted">Price <span>{{event.price}} €</span></h6>
+    </div>
+    <a href="/events/{{event.id}}/edit" class="btn btn-outline-warning btn-sm">Edit</a>
   </div>
+
+  <a href="/bars/{{bar.id}}" ><i class="fa fa-angle-left mt-5" aria-hidden="true"></i></a>
+
   <a href="/events/{{event.id}}/edit" class="btn btn-outline-warning btn-sm">Edit</a>
   <a href="/events/{{event.id}}/delete" class="btn btn-outline-danger btn-sm">Delete</a>
+
 </div>
 
-<a href="/bars/{{bar.id}}" class="card-link ml-5">Go back</a>
+
+
 
 {{!-- // Evento
 // Artista
