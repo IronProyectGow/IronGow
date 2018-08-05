@@ -1,6 +1,7 @@
 body{
     padding-top: 100px;
-    margin-left: 5%
+    margin-left: 5%;
+    background-color: black;
 }
 .navbar{
   background: #212529;
