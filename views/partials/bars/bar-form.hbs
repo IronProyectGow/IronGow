@@ -18,9 +18,7 @@
             {{ errors.capacity }}
               </div>
             {{/if}}
-  <button type="submit" class="btn btn-primary mt-3">Submit</button>
-    <input type="number" class="form-control mb-3 col-sm-1" id="capacity" name='capacity' placeholder="Capacity" value="{{this.capacity}}">
-  </div>
+
   <div>
     <label>Address</label>
     <input type="number"  name="longitude" placeholder="Longitude">
@@ -29,3 +27,5 @@
  
   <button type="submit" class="btn btn-outline-info mt-3">Submit</button>
 </form>
+
+<a href="/bars/{{bar.id}}"><i class="fa fa-angle-left ml-5" aria-hidden="true"></i></a>
