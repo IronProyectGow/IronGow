@@ -1,12 +1,8 @@
-
-<h1 class="title">Artists List</h1>
-
-
-<div class="list-container">
-{{#each artists as |artist|}}
-    {{> artists/artistsdetails}}
-{{/each}}
+<div class="container">
+    <h1 class="title">Artists List</h1>
+        <div class="row">
+                {{#each artists as |artist|}}
+                {{> artists/artistsdetails}}
+            {{/each}}
+        </div>
 </div>
-
-
-
