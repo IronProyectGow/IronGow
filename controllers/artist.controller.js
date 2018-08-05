@@ -29,8 +29,11 @@ module.exports.edit = (req, res, next) => {
 
     Artist.findById(id)
         .then(artist => {
-            if (artist) {
-                res.render('partials/form', { artist })
+            if (artist) {                
+                res.render('partials/form', { 
+                    description: req.body.description,
+                    genre: req.body.genre
+                 })
             } else {
                 next(createError(404));
             }
