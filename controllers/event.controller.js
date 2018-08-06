@@ -87,8 +87,8 @@ module.exports.doEdit = (req, res, next) => {
     
 }
 
-module.exports.delete = (req, res, next) =>{
-    const id = req.params.id;
+//module.exports.delete = (req, res, next) =>{
+    //const id = req.params.id;
 
     // Event.findById(id)
     //     .then( event => {
@@ -101,4 +101,4 @@ module.exports.delete = (req, res, next) =>{
     //             .catch( error => next(error));
     //     })
     //     .catch(error => {next(error);})
-}
+//}
