@@ -1,5 +1,5 @@
-window.onload = () => {
-    var map = new google.maps.Map(document.getElementById('map'), {
+window.onload = (bar) => {
+    const map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: 40.43, 
             lng: -3.69
@@ -7,28 +7,35 @@ window.onload = () => {
         zoom: 13
     });
 
-    const input = document.getElementById("pac-input");
+    const input = document.getElementById("address-input");
 
-    var autocomplete = new google.maps.places.Autocomplete(
+    const autocomplete = new google.maps.places.Autocomplete(
       input
     );
 
     autocomplete.setFields(['address_components', 'geometry', 'icon', 'name']);
 
     autocomplete.addListener('place_changed', function() {
-        var place = autocomplete.getPlace();
+        const place = autocomplete.getPlace();
         
         // If the place has a geometry, then present it on a map.
         if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
         } else {
           map.setCenter(place.geometry.location);
-          map.setZoom(17);  // Why 17? Because it looks good.
+          map.setZoom(17); 
         }
 
-        document.getElementById("latitude").value = map.getCenter().lat();
-        document.getElementById("longitude").value = map.getCenter().lng();
+        const latitude = document.getElementById("latitude").value = map.getCenter().lat();
+        const longitude = document.getElementById("longitude").value = map.getCenter().lng();
+
+        const myLatlng = new google.maps.LatLng(Number(latitude),Number(longitude));
+
+        const marker = new google.maps.Marker({position: myLatlng});
+        marker.setMap(map);
       });
+
+
 
  }
 
