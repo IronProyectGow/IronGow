@@ -62,7 +62,7 @@ module.exports.doEdit = (req, res, next) => {
     Bar.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
         .then(bar => {
             if (bar) {
-                res.redirect('partials/form')
+                res.redirect(`/bars/${id}`)
             } else {
                 next(createError(404));
             }
