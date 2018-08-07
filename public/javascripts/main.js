@@ -1,11 +1,21 @@
-window.onload = (bar) => {
-    const map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-            lat: 40.43, 
-            lng: -3.69
-        },
-        zoom: 13
-    });
+window.onload = () => {
+
+    let latitude = Number($('#longitude').val());
+    let longitude = Number($('#latitude').val());
+    
+    let barMarker = {
+        lat: latitude, 
+        lng: longitude
+    };
+
+    const map = new google.maps.Map(
+        document.getElementById('map'), {
+            zoom: 15,
+            center: barMarker
+        });
+    
+    const marker = new google.maps.Marker({position: barMarker, map: map});
+
 
     const input = document.getElementById("address-input");
 
