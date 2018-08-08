@@ -7,6 +7,10 @@ body{
     color: salmon !important;
     font-weight: bold !important;
 }
+
+h1 {
+    font-size: 3rem !important;
+}
 h2, h3, label {
     color: #1fc6d8 !important;
 }
@@ -45,19 +49,7 @@ header.masthead .overlay{position:absolute;background-color:#212529;height:100%;
 
 
 .latest-music{padding-top:7rem;padding-bottom:7rem}
-.myform-control {
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
+
 
 .btn {
     border: none !important;
@@ -72,9 +64,9 @@ button.btn.btn-light {
 }
 
 a.btn.btn-default.btn-scroll {
-    border: 1px solid #fff;
+    border: 1px solid #fff !important;
     color: #fff;
-    border-radius: 100%;
+    border-radius: 100% !important;
 }
 
 
@@ -147,11 +139,6 @@ p.myp.text-center {
     color: #1fc6d8 ;
 }
 
-.fa-angle-down{
-    border: 1px solid;
-    border-radius: 100%;
-    padding: 50%;
-}
 @keyframes floating-arrow {
   from {
       -webkit-transform: translateY(0);
