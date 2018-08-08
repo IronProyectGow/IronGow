@@ -12,4 +12,13 @@
 <a href="/artists" ><i class="fa fa-angle-left mt-3" aria-hidden="true"></i></a>
 </div>
 
+<div class="col-sm">
+      {{#if events}}
+      <h3 class="title">Upcoming events</h3>
+      {{> events/event_list }}
+      {{else}}
+      <h3 class="title">This Artist has no events</h3>
+      {{/if}}
+  
+</div>  
 

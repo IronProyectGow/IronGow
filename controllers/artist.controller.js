@@ -18,6 +18,7 @@ module.exports.detail = (req, res, next) => {
     const id = req.params.id;
 
     Artist.findById(id)
+        .populate('events')
         .then(artist => {
             res.render('partials/artists/artist', { artist })
         })

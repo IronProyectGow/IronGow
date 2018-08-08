@@ -18,6 +18,7 @@ const eventSchema = new mongoose.Schema({
         ref: 'bar',
         required: 'Bar is required'
     },
+    artist: String
 
 }, { timestamps: true });
 

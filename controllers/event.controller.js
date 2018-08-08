@@ -3,17 +3,20 @@ const mongoose = require('mongoose');
 const createError = require('http-errors');
 const Event = require('../model/event.model');
 const Bar = require('../model/bar.model');
+const Artist = require('../model/artist.model');
 
 module.exports.doCreateBarEvent = (req, res, next) => {
     const id = req.body.bar;
-
+    const artistName = req.body.artist;
+    console.log(req.body);
     Bar.findById(id)
-        .then(bar => {
+        .then((bar) => {
             if (bar) {
                 let event = new Event({
                     name: req.body.name,
                     price: req.body.price,
-                    bar: bar._id
+                    bar: bar._id,
+                    artist: req.body.artist
                 });
 
                 event.save()
@@ -21,6 +24,12 @@ module.exports.doCreateBarEvent = (req, res, next) => {
                         return event.save();
                     })
                     .then(()=> {
+                        Artist.find({name: artistName})
+                            .then((artist) => {
+                                console.log(artist.events)
+                                artist.events.push(event)
+                                console.log(artist)
+                            })
                         res.redirect(`/bars/${id}`)
                     })
                     .catch(error => {next(error);})
