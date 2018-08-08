@@ -7,7 +7,7 @@
           <div class="card-body">
             <img src="{{bar.gallery}}" alt="picture">
             <h6 class="title mt-2">{{bar.description}}</h6>
-            <h6 class="card-subtitle m-2 text-muted">Capacity: <span>{{bar.capacity}}</span></h6>
+            <h6 class="card-subtitle mt-2">Capacity: <span>{{bar.capacity}}</span></h6>
         </div>
             {{!-- <h1>{{bar.coordinates.[0]}}</h1> --}}
               <address>
@@ -17,7 +17,7 @@
         <a href="/bars/{{bar.id}}/edit" class="btn btn-outline-warning btn-sm mb-1">Edit</a>
         <a href="/bars/{{bar.id}}/createEvent" class="btn btn-outline-info btn-sm">Create Event</a> 
         </div>
-        <a href="/bars" ><i class="fa fa-angle-left mt-5" aria-hidden="true"></i></a>
+        <a href="/bars" ><i class="fa fa-angle-left mt-5 mb-5" aria-hidden="true"></i></a>
     </div>
     <div class="col-sm">
           {{#if events}}

@@ -1,18 +1,18 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <h3 class="my-heading">IRON<span class="bg-main">MUSIC</span></h3>
+            <h1 class="my-heading">IRON<span class="bg-main">MUSIC</span></h1>
         </a>
 
         <div class="btn-group show-on-hover">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-google-plus"></i> Create an account <span class="caret"></span>
+          <button type="button" class="btn btn-primary btn-block btn-register dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-google-plus"></i> Login with Google<span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu">
                         <li class="nav-link">
                     <form action="/auth/google" method="POST">
                         <input type="hidden" name="role" value="user">
-						<button type="submit" class="btn btn-danger">
+						<button type="submit" class="btn btn-outline-info">
         					<i class="fa fa-google-plus"></i> Fan Profile </span>
 						</button>
 					</form>
@@ -21,7 +21,7 @@
             <li class="nav-link">
                     <form action="/auth/google" method="POST">
                         <input type="hidden" name="role" value="artist">
-						<button type="submit" class="btn btn-danger">
+						<button type="submit" class="btn btn-outline-info">
         					<i class="fa fa-google-plus"></i> Artist Profile </span>
 						</button>
 					</form>
@@ -30,7 +30,7 @@
             <li class="nav-link">
                     <form action="/auth/google" method="POST">
                         <input type="hidden" name="role" value="bar">
-						<button type="submit" class="btn btn-danger">
+						<button type="submit" class="btn btn-outline-info">
         					<i class="fa fa-google-plus"></i> Music Bar Profile</span>
 						</button>
 					</form>

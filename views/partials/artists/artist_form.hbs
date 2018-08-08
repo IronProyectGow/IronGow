@@ -1,6 +1,7 @@
-<h2 class="mt-5 ml-5">Complete your Artist profile</h2>
+<div class="container">
+  <h2 class="">Complete your Artist profile</h2>
 
-<form method='post' class="ml-5">
+<form method='post'>
   <div class="form-group">
     <label for="description">Description</label>
     <textarea type="text" class="form-control {{#if errors.description }}is-invalid{{/if}}" id="artist-description" aria-describedby="text" name='description' placeholder="Description">{{artist.description}}</textarea>
@@ -21,3 +22,5 @@
   </div>
   <button type="submit" class="btn btn-outline-info mb-5">Submit</button>
 </form>
+</div>
+

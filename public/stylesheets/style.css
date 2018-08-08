@@ -1,11 +1,19 @@
 body{
-    padding-top: 100px;
     margin-left: 5%;
-    background-color: black;
+    padding-top: 100px;
+     background-color: black !important;
+}
+.my-heading {
+    color: salmon !important;
+    font-weight: bold !important;
+}
+h2, h3, label {
+    color: #1fc6d8 !important;
 }
 .navbar{
-  background: #212529;
+  background: white;
 }
+
 .navbar-shrink{
     padding-top: 0;
     padding-bottom: 0;
@@ -51,6 +59,10 @@ header.masthead .overlay{position:absolute;background-color:#212529;height:100%;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.btn {
+    border: none !important;
+}
+
 button.btn.btn-light {
     position: absolute;
     background: transparent;
@@ -78,26 +90,19 @@ a.btn.btn-default.btn-scroll {
     transform: translate(-50%, -50%);
 }
 
-h3.my-heading {
+/* .my-heading {
     color: #fff;
     font-weight: bold;
     font-size: 39px;
-}
+} */
 
 p.myp-slider.text-center {
     color: #fff;
 }
-.btn-login {
-  background: #1fc6d8 !important;
-}
+
 .btn-register {
     background: #1fc6d8 !important;
 }
-
-.btn-join {
-    background: #1fc6d8 !important;
-}
-
 
 .inner-section h3 {
     text-transform: uppercase;
@@ -142,6 +147,11 @@ p.myp.text-center {
     color: #1fc6d8 ;
 }
 
+.fa-angle-down{
+    border: 1px solid;
+    border-radius: 100%;
+    padding: 50%;
+}
 @keyframes floating-arrow {
   from {
       -webkit-transform: translateY(0);
@@ -159,7 +169,7 @@ p.myp.text-center {
 
 footer.footer{padding-top:1rem;padding-bottom:1rem}
 
-.text-muted {
+.small {
   text-align: center;
 }
 
@@ -182,6 +192,10 @@ input.form-control{
     border: 1px solid;
     border-radius: 13%;
     padding: 20px;
+}
+
+pre {
+    color: white !important;
 }
 
 /*--------------role selection --------*/
