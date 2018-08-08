@@ -1,5 +1,5 @@
   {{#if artist}}
-    {{> artists/artist_form artist }}
+    {{> artists/artist_form artist=artist errors=errors }}
   {{else}}
-    {{> bars/bar_form bar }}
+    {{> bars/bar_form bar=bar errors=errors }}
   {{/if}}
