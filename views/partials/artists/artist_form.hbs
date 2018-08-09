@@ -3,7 +3,7 @@
 <form method='post' class="ml-5">
   <div class="form-group">
     <label for="description">Description</label>
-    <textarea type="text" class="form-control {{#if errors.description }}is-invalid{{/if}}" id="artist-description" aria-describedby="text" name='description' placeholder="Description">{{this.description}}</textarea>
+    <textarea type="text" class="form-control {{#if errors.description }}is-invalid{{/if}}" id="artist-description" aria-describedby="text" name='description' placeholder="Description">{{artist.description}}</textarea>
             {{#if errors.description }}
               <div class="invalid-feedback">
             {{ errors.description }}

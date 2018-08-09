@@ -4,8 +4,6 @@ const createError = require('http-errors');
 const Event = require('../model/event.model');
 const Bar = require('../model/bar.model');
 
-
-
 module.exports.doCreateBarEvent = (req, res, next) => {
     const id = req.body.bar;
 
@@ -87,18 +85,16 @@ module.exports.doEdit = (req, res, next) => {
     
 }
 
-//module.exports.delete = (req, res, next) =>{
-    //const id = req.params.id;
+module.exports.delete = (req, res, next) => {
+    const id = req.params.id;
+    console.log(id);
 
-    // Event.findById(id)
-    //     .then( event => {
-    //         Bar.findById(event.bar)
-    //             .then(event.remove()
-    //                 .then(()=>{
-    //                     res.redirect(`/bars/${event.bar}`)
-    //                 })
-    //             )
-    //             .catch( error => next(error));
-    //     })
-    //     .catch(error => {next(error);})
-//}
+    Event.findByIdAndRemove(id)
+        .then(event => {
+            const barID = event.bar;
+            res.redirect(`/bars/${barID}`)
+        })
+        .catch(error => {
+            next(error);
+        })
+}
