@@ -10,7 +10,7 @@ const barSchema = new mongoose.Schema({
     address: {
         type: String,
         required: 'Address is required',
-        unique: true,
+        // unique: true,
         default: 'Fill your adress'
     },
     capacity: {

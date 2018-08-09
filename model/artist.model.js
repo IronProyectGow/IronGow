@@ -15,7 +15,6 @@ const artistSchema = new mongoose.Schema({
         year : Number
     }],
     gallery: [String]
-
 }, { timestamps: true, discriminatorKey: 'kind' });
 
 const Artist = User.discriminator('Artist', artistSchema)
