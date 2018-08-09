@@ -4,6 +4,7 @@ const createError = require('http-errors');
 const Event = require('../model/event.model');
 const Bar = require('../model/bar.model');
 const Artist = require('../model/artist.model');
+const User = require('../model/user.model');
 
 module.exports.doCreateBarEvent = (req, res, next) => {
     const id = req.body.bar;
@@ -33,6 +34,7 @@ module.exports.doCreateBarEvent = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
     const id = req.params.id;
+    const user = req.user;
 
     Event.findById(id)
         .then( event => {
@@ -40,11 +42,15 @@ module.exports.detail = (req, res, next) => {
                 .then(bar => {
                     Artist.findById(event.artist)
                         .then(artist =>{
-                            if (bar) {
-                                res.render('partials/events/event', { event, bar, artist })
-                            } else {
-                                res.render('partials/events/event', { event })
-                            }
+                                User.findById(user.id)
+                                    .then((user)=> {
+                                        if (bar) {
+                                            res.render('partials/events/event', { event, bar, artist, user })
+                                        } else {
+                                            res.render('partials/events/event', { event })
+                                        }
+                                    })
+                            
                         })
                     
                 })
@@ -92,7 +98,6 @@ module.exports.doEdit = (req, res, next) => {
 
 module.exports.delete = (req, res, next) => {
     const id = req.params.id;
-    console.log(id);
 
     Event.findByIdAndRemove(id)
         .then(event => {
@@ -102,4 +107,18 @@ module.exports.delete = (req, res, next) => {
         .catch(error => {
             next(error);
         })
+}
+
+module.exports.follow = (req, res, next) => {
+    const id = req.params.id;
+    const follower = req.body.follow;
+
+    console.log(follower);
+
+    Event.findByIdAndUpdate(id, {$push: {users: follower}}, { new: true, runValidators: true })
+        .then(event => {
+            console.log(event)
+            res.redirect(`/events/${id}`)
+        })
+        .catch(error => {next(error);})
 }

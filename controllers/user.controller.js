@@ -12,16 +12,17 @@ module.exports.profile = (req, res, next) => {
     let id = req.user._id;
     let user = req.user;
 
-    console.log(user);
-
     User.findById(id)
     .then(user => {
-        console.log(user)
-
         if(user.role === 'user') {
-            res.render('partials/users/user', {
-                user: req.user
-            })
+            Event.find({'users': id})
+                .then(events => {
+                    res.render('partials/users/user', {
+                        user: req.user,
+                        events
+                    })
+                })
+            
         } else if (user.role === 'artist'){
             // Query de Mongoose
             Event.find({'artist': id})

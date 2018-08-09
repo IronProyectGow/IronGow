@@ -31,8 +31,7 @@ module.exports.setup = (passport) => {
        .then(user => {
          if (user) {  
            next(null, user, true);
-         } else {
-             console.log(profile);
+         } else {;
              
            const userData = {
              name: profile.displayName,
