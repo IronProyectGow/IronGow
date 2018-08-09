@@ -5,16 +5,21 @@ const artistSchema = new mongoose.Schema({
     description: {
         type: String,
         required: 'Description is required',
+        default: 'This description is cool'
     },
     genre: {
         type: String,
         required: 'Genre is required',
+        default: 'Rock'
     },
     albums: [{
         name : String,
         year : Number
     }],
-    gallery: [String]
+    gallery: {
+        type: String,
+        default:'http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/man-singer-dark-skin-tone.png'
+    },
 }, { timestamps: true, discriminatorKey: 'kind' });
 
 const Artist = User.discriminator('Artist', artistSchema)

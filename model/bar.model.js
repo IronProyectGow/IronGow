@@ -18,7 +18,10 @@ const barSchema = new mongoose.Schema({
         required: 'Capacity is required',
         default: 1
     },
-    gallery: [String],
+    gallery: {
+        type: String,
+        default: 'https://pbs.twimg.com/profile_images/378800000530141163/2bbb68109f929349dc0d33691de39979.jpeg',
+    },
     location: {
         type: {
             type: String, 
