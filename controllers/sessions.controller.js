@@ -12,7 +12,7 @@ module.exports.createWithIDPCallback = (req, res, next) => {
           if(firstLogin && firstLogin === true){
             res.redirect('/?rt')
           } else {
-            res.redirect('/') //esto hay que corregirlo
+            res.redirect('/users') //esto hay que corregirlo
           }
         }
       });
