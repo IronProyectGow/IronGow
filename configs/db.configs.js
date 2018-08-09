@@ -1,6 +1,11 @@
 require('dotenv');
 const mongoose = require('mongoose');
 
+<<<<<<< HEAD
+=======
+
+MONGODB_URI = process.env.MONGO_URI
+>>>>>>> 89d80d29afcb2ddd3d3043188429c0efa1461665
 
 MONGODB_URI = process.env.MONGO_URI
 

@@ -5,15 +5,18 @@ const barSchema = new mongoose.Schema({
     description: {
         type: String,
         required: 'Description is required',
+        default: 'Please fill your description'
     },
     address: {
         type: String,
         required: 'Address is required',
-        unique: true
+        unique: true,
+        default: 'Fill your adress'
     },
     capacity: {
         type: Number,
         required: 'Capacity is required',
+        default: 1
     },
     gallery: [String],
     location: {
@@ -25,7 +28,8 @@ const barSchema = new mongoose.Schema({
         },
         coordinates: {
             type: [Number],
-            required: true
+            required: true,
+            default: [1, 1]
         }
     }
 
