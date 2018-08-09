@@ -23,7 +23,12 @@ class="ml-5">
   </div>
   <div class="form-group">
     <label for="description">Artist</label>
-    <textarea type="text" class="form-control" id="artist" aria-describedby="text" name='artist' placeholder="name">{{event.artist}}</textarea>
+
+    <select name="artist" class="form-control" id="">
+      {{#each artists as |artist|}}
+        <option value="{{artist._id}}">{{artist.name}}</option>
+      {{/each}}
+    </select>
   </div>
   <div class="form-group">
     <label for="capacity">Price</label>

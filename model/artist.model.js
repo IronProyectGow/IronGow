@@ -14,9 +14,7 @@ const artistSchema = new mongoose.Schema({
         name : String,
         year : Number
     }],
-    gallery: [String], 
-    events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event', default: null}]
-
+    gallery: [String]
 }, { timestamps: true, discriminatorKey: 'kind' });
 
 const Artist = User.discriminator('Artist', artistSchema)

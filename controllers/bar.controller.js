@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const createError = require('http-errors');
 const Bar = require('../model/bar.model');
+const Artist = require('../model/artist.model');
 const Event = require('../model/event.model');
 
 module.exports.list = (req, res, next) => {
@@ -18,7 +19,6 @@ module.exports.detail = (req, res, next) => {
     const id = req.params.id;
 
     Bar.findById(id)
-        //.populate('events')
         .then(bar => {
             Event.find({'bar': id})
                 .then(events => {
@@ -86,9 +86,13 @@ module.exports.createEvent = (req, res, next) => {
     Bar.findById(id)
         .then( bar => {
             if (bar) {
-                res.render('partials/event_edit', {
-                    bar,
-                    event : new Event()
+                Artist.find()
+                    .then((artists) => {
+                        res.render('partials/event_edit', {
+                            artists,
+                            bar,
+                            event : new Event()
+                    })
                 })
             } else {
                 next(error);

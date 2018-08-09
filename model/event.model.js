@@ -15,10 +15,14 @@ const eventSchema = new mongoose.Schema({
     },
     bar: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'bar',
+        ref: 'Bar',
         required: 'Bar is required'
     },
-    artist: String
+    artist: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Artist',
+        required: 'Artist is required'
+    }
 
 }, { timestamps: true });
 

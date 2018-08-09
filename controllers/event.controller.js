@@ -7,8 +7,6 @@ const Artist = require('../model/artist.model');
 
 module.exports.doCreateBarEvent = (req, res, next) => {
     const id = req.body.bar;
-    const artistName = req.body.artist;
-    console.log(req.body);
     Bar.findById(id)
         .then((bar) => {
             if (bar) {
@@ -24,13 +22,6 @@ module.exports.doCreateBarEvent = (req, res, next) => {
                         return event.save();
                     })
                     .then(()=> {
-                        Artist.find({name: artistName})
-                            .then((artist) => {
-                                console.log(artist.events);
-                                console.log(artist);
-                                console.log(event);
-                                artist.events.push(event)
-                            })
                         res.redirect(`/bars/${id}`)
                     })
                     .catch(error => {next(error);})
@@ -47,11 +38,15 @@ module.exports.detail = (req, res, next) => {
         .then( event => {
             Bar.findById(event.bar)
                 .then(bar => {
-                    if (bar) {
-                        res.render('partials/events/event', { event, bar })
-                    } else {
-                        res.render('partials/events/event', { event })
-                    }
+                    Artist.findById(event.artist)
+                        .then(artist =>{
+                            if (bar) {
+                                res.render('partials/events/event', { event, bar, artist })
+                            } else {
+                                res.render('partials/events/event', { event })
+                            }
+                        })
+                    
                 })
 
         })
