@@ -26,9 +26,10 @@ module.exports.doCreateBarEvent = (req, res, next) => {
                     .then(()=> {
                         Artist.find({name: artistName})
                             .then((artist) => {
-                                console.log(artist.events)
+                                console.log(artist.events);
+                                console.log(artist);
+                                console.log(event);
                                 artist.events.push(event)
-                                console.log(artist)
                             })
                         res.redirect(`/bars/${id}`)
                     })

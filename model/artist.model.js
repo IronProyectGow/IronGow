@@ -15,7 +15,7 @@ const artistSchema = new mongoose.Schema({
         year : Number
     }],
     gallery: [String], 
-    events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event'}]
+    events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event', default: null}]
 
 }, { timestamps: true, discriminatorKey: 'kind' });
 
