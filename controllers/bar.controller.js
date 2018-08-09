@@ -56,8 +56,11 @@ module.exports.doEdit = (req, res, next) => {
         location: {
             type: 'Point',
             coordinates: [req.body.longitude, req.body.latitude]
-        }
+        }, 
+        address : req.body.address
     }
+
+    console.log(updateSet);
 
     Bar.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
         .then(bar => {

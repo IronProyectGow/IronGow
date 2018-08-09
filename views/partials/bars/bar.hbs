@@ -7,10 +7,11 @@
           <div class="card-body">
             <img src="{{bar.gallery}}" alt="picture">
             <h6 class="title mt-2">{{bar.description}}</h6>
+            <h6 class="title mt-2">{{bar.address}}</h6>
             <h6 class="card-subtitle m-2 text-muted">Capacity: <span>{{bar.capacity}}</span></h6>
         </div>
             {{!-- <h1>{{bar.coordinates.[0]}}</h1> --}}
-              <address>
+              <address class='d-none'>
                 <input type="text" id='latitude' value="{{ bar.location.coordinates.[0] }}"/>
                 <input type="text" id='longitude' value="{{ bar.location.coordinates.[1] }}"/>
               </address>
