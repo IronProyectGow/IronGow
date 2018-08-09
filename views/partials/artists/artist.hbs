@@ -13,4 +13,15 @@
 </div>
 
 
-{{!-- partial artist --}}
+
+
+<div class="col-sm">
+      {{#if events}}
+      <h3 class="title">Upcoming events</h3>
+      {{> events/event_list }}
+      {{else}}
+      <h3 class="title">This Artist has no events</h3>
+      {{/if}}
+  
+</div>  
+

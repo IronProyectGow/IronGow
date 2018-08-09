@@ -1,6 +1,7 @@
 const errors = require("http-errors");
 const mongoose = require("mongoose");
-const Artist = require("../model/artist.model")
+const Artist = require("../model/artist.model");
+const Event = require("../model/event.model");
 
 module.exports.list = (req, res, next) => {
     Artist.find()
@@ -19,7 +20,15 @@ module.exports.detail = (req, res, next) => {
 
     Artist.findById(id)
         .then(artist => {
-            res.render('partials/artists/artist', { artist })
+            Event.find({'artist': id})
+            .then(events => {
+                console.log('Event', events)
+                if(events) {
+                    res.render('partials/artists/artist', { artist, events })
+                } else {
+                    res.render('partials/bars/bar', { artist })
+                }
+            })
         })
         .catch(error => next(error));
 }
