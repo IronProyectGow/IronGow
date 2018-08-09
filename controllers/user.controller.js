@@ -23,13 +23,12 @@ module.exports.profile = (req, res, next) => {
                 user: req.user
             })
         } else if (user.role === 'artist'){
-            // Query de Mongoose
             Event.find({'artist': id})
             .then(events => {
-
                 res.render('partials/artists/artist', {
                     artist: req.user,
-                    events
+                    events,
+                    compareIDS: [req.user._id, id]
                 })
             })
             .catch(err => {
