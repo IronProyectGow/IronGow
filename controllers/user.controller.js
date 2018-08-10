@@ -18,9 +18,13 @@ module.exports.profile = (req, res, next) => {
     .then(user => {
         console.log(user)
 
-        if(user.role === 'user') {
-            res.render('partials/users/user', {
-                user: req.user
+        if(user.role === 'bar') {
+            Event.find({'artist': id})
+            .then(events => {
+            res.render('partials/bars/bar', {
+                bar: req.user,
+                compareIDS: [req.user._id, id]
+            })
             })
         } else if (user.role === 'artist'){
             Event.find({'artist': id})
@@ -35,12 +39,11 @@ module.exports.profile = (req, res, next) => {
                 next(err)
             })
 
-        } else {
-            res.render('partials/bars/bar', {
-                bar: req.user
+        } else { 
+            res.render('partials/users/user', {
+                user: req.user
             })
         }
-        
     })
     .catch(error => {
         next(error)
