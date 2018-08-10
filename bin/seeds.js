@@ -37,7 +37,7 @@ Artist.create(artists)
     let bars = [{
         name : 'Sala Los Perdios',
         description: 'Coqueto local con música en directo',
-        address: 'Madrid',
+        address: 'Far away',
         capacity: 10,
         gallery: 'https://www.esloqueveo.com/thumbnail.aspx?p_registro=145227&p=0&t=33',
         location : {
