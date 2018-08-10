@@ -15,6 +15,7 @@ module.exports.profile = (req, res, next) => {
     console.log(user);
 
     User.findById(id)
+    .populate('events')
     .then(user => {
         console.log(user)
 
