@@ -1,31 +1,32 @@
 <div class="container">
-  <h3 class="title">{{artist.name}}</h3>
-
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <img src="{{artist.gallery}}" class="mx-auto d-block">
-      <h6 class="title mt-2">{{artist.description}}</h6>
-      <h6 class="card-subtitle m-2 text-muted">Genre: <span>{{artist.genre}}</span></h6>
+  <div class="row">
+    
+    <div class="col-sm">
+      <h3 class="title">{{artist.name}}</h3>
+      <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <img src="{{artist.gallery}}" class="mx-auto d-block">
+        <h6 class="title mt-2">{{artist.description}}</h6>
+        <h6 class="card-subtitle m-2 text-muted">Genre: <span>{{artist.genre}}</span></h6>
     </div>
-
     {{#isArtist compareIDS }}
         <a id="editBtn" href="/artists/{{artist.id}}/edit" class="btn btn-outline-warning btn-sm">Edit</a>
     {{/isArtist}}
-
   </div>
-  <a href="/artists" ><i class="fa fa-angle-left mt-3" aria-hidden="true"></i></a>
+    <a href="/artists" ><i class="fa fa-angle-left mt-3" aria-hidden="true"></i></a>
 </div>
 
+      <div class="col-sm">
+            {{#if events}}
+            <h3 class="title">Upcoming events</h3>
+            {{> events/event_list }}
+            {{else}}
+            <h3 class="title">This Artist has no events</h3>
+            {{/if}}
+      </div>
 
 
+  </div>
+</div>
 
-<div class="col-sm">
-      {{#if events}}
-      <h3 class="title">Upcoming events</h3>
-      {{> events/event_list }}
-      {{else}}
-      <h3 class="title">This Artist has no events</h3>
-      {{/if}}
-  
-</div>  
 
