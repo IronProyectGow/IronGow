@@ -1,7 +1,7 @@
 const createError = require('http-errors');
 
 module.exports.checkRole = (role) => {
-  console.log(role);
+
   
   return (req, res, next) => {
     if (req.user.role === role) {
