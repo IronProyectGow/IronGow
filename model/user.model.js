@@ -13,9 +13,13 @@ const userSchema = new mongoose.Schema({
         enum:  [constants.ROLE_USER, constants.ROLE_ARTIST, constants.ROLE_BAR, ''],
         default: ''
     },
-    social: {
+    social : {
         googleId: String
-    }
+    }, 
+    events : [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Event',
+    }]
 }, { timestamps: true, discriminatorKey: 'kind' });
 
 const User = mongoose.model('User', userSchema)

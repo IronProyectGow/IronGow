@@ -13,10 +13,10 @@ class="ml-5">
     <label for="description">Name</label>
     <textarea type="text" class="form-control" id="name" aria-describedby="text" name='name' placeholder="name">{{event.name}}</textarea>
   </div>
-  <div class="form-group">
+  <divv class="form-group">
     <label for="description">Artist</label>
 
-    <select name="artist" class="form-control" id="">
+    <select name="artist" class="form-control" id="artist">
       {{#each artists as |artist|}}
         <option value="{{artist._id}}">{{artist.name}}</option>
       {{/each}}

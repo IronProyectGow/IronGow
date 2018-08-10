@@ -81,9 +81,11 @@ module.exports.doEdit = (req, res, next) => {
 
     let updateSet = {
         name : req.body.name,
-        price : req.body.price 
+        price : req.body.price,
+        artist : req.body.artist
     }
 
+    console.log(req.body.artist);
     Event.findByIdAndUpdate(id, {$set : updateSet}, { new: true, runValidators: true })
         .then(event => {
             if (event) {
@@ -117,8 +119,12 @@ module.exports.follow = (req, res, next) => {
 
     Event.findByIdAndUpdate(id, {$push: {users: follower}}, { new: true, runValidators: true })
         .then(event => {
-            console.log(event)
-            res.redirect(`/events/${id}`)
+            User.findByIdAndUpdate(follower, {$push: {events: id}}, { new: true, runValidators: true } )
+                .then((user) => {
+                    console.log(event);
+                    console.log(user);
+                    res.redirect(`/events/${id}`)
+                })
         })
         .catch(error => {next(error);})
 }
