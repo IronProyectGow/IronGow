@@ -18,7 +18,6 @@ module.exports.profile = (req, res, next) => {
     
     .populate('events')
     .then(user => {
-        console.log(user.events)
         if(user.role === 'bar') {
             Event.find({'bar': id})
             .then(events => {
@@ -42,9 +41,13 @@ module.exports.profile = (req, res, next) => {
             })
 
         } else { 
-            res.render('partials/users/user', {
-                user: req.user, 
-            })
+            Event.find({'users': id})
+                .then(events => {
+                    res.render('partials/users/user', {
+                        user: req.user,
+                        events
+                    })
+                })
         }
     })
     .catch(error => {
