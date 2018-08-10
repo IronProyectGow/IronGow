@@ -75,7 +75,8 @@ module.exports.doEdit = (req, res, next) => {
 
     let updateSet = {
         name : req.body.name,
-        price : req.body.price 
+        price : req.body.price, 
+        artist : req.body.artist
     }
 
     Event.findByIdAndUpdate(id, {$set : updateSet}, { new: true, runValidators: true })
