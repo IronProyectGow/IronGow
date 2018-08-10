@@ -45,7 +45,8 @@ module.exports.detail = (req, res, next) => {
                                 User.findById(user.id)
                                     .then((user)=> {
                                         if (bar) {
-                                            res.render('partials/events/event', { event, bar, artist, user })
+                                            res.render('partials/events/event', { event, bar, artist, user,
+                                            compareIDS: [req.user._id, id] })
                                         } else {
                                             res.render('partials/events/event', { event })
                                         }
