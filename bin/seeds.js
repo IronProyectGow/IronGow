@@ -35,31 +35,20 @@ Artist.create(artists)
 
 
     let bars = [{
-        name : 'Sala Alma',
+        name : 'Sala Los Perdios',
         description: 'Coqueto local con música en directo',
-        location: 'Aquí al lao',
+        address: 'Madrid',
         capacity: 10,
         gallery: 'https://www.esloqueveo.com/thumbnail.aspx?p_registro=145227&p=0&t=33',
         location : {
             type : 'Point',
             coordinates : [
-                40.438985,
-                -3.691381  
+                37.2789083,
+                -7.1903932
+
+  
             ]}
     },
-    {
-        name : 'Sala Belén',
-        description: 'Coqueto local con música en directo',
-        location: 'Aquí al lao',
-        capacity: 50,
-        gallery: 'https://www.esloqueveo.com/thumbnail.aspx?p_registro=145227&p=0&t=33',
-        location : {
-            type : 'Point',
-            coordinates : [
-                40.438985,
-                -3.691381
-            ]}
-    }
 ]
 
 
