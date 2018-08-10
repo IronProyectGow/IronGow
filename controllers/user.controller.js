@@ -13,6 +13,7 @@ module.exports.profile = (req, res, next) => {
     let user = req.user;
 
     User.findById(id)
+    .populate('events')
     .then(user => {
         if(user.role === 'user') {
             Event.find({'users': id})
