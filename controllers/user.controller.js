@@ -12,20 +12,17 @@ module.exports.profile = (req, res, next) => {
     let id = req.user._id;
     let user = req.user;
 
-    console.log(user);
-
     User.findById(id)
+    .populate('events')
     .then(user => {
-        console.log(user)
-
-        if(user.role === 'bar') {
-            Event.find({'artist': id})
-            .then(events => {
-            res.render('partials/bars/bar', {
-                bar: req.user,
-                compareIDS: [req.user._id, id]
-            })
-            })
+        if(user.role === 'user') {
+            Event.find({'users': id})
+                .then(events => {
+                    res.render('partials/users/user', {
+                        user: req.user,
+                        events
+                    })
+                })
         } else if (user.role === 'artist'){
             Event.find({'artist': id})
             .then(events => {

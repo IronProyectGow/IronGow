@@ -16,11 +16,12 @@
           </form>
       </div>
   </div>
-
+  
+  <form action="/events/{{event.id}}/follow" method="post">
+    <button class="btn btn-outline-success btn-sm" name='follow' value='{{user.id}}'>Follow this event</button>
+  </form>
   
 
-
-  
 
   <a href="/bars/{{bar.id}}" ><i class="fa fa-angle-left mt-5" aria-hidden="true"></i></a>
 

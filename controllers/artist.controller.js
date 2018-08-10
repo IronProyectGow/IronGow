@@ -70,7 +70,6 @@ module.exports.doEdit = (req, res, next) => {
             }
         })
         .catch(error => {
-            console.log(error.errors);
             if (error instanceof mongoose.Error.ValidationError) {
                 res.render('partials/form', {
                     artist: req.body,

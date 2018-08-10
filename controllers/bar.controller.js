@@ -61,8 +61,6 @@ module.exports.doEdit = (req, res, next) => {
         address : req.body.address
     }
 
-    console.log(updateSet);
-
     Bar.findByIdAndUpdate(id, { $set: updateSet }, { new: true, runValidators: true })
         .then(bar => {
             if (bar) {
@@ -72,7 +70,6 @@ module.exports.doEdit = (req, res, next) => {
             }
         })
         .catch(error => {
-            console.log(error.errors);
             if (error instanceof mongoose.Error.ValidationError) {
                 res.render('partials/form', {
                     bar: req.body,

@@ -22,7 +22,12 @@ const eventSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Artist',
         required: 'Artist is required'
-    }
+    },
+    users: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    }]
+
 
 }, { timestamps: true });
 

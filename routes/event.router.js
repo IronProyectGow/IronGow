@@ -10,4 +10,6 @@ router.post('/:id/edit', eventController.doEdit);
 
 router.post('/:id/delete', eventController.delete);
 
+router.post('/:id/follow', eventController.follow);
+
 module.exports = router;
