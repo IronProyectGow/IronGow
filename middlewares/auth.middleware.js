@@ -1,12 +1,11 @@
 const createError = require('http-errors');
 
-
 module.exports.checkRole = (role) => {
+  console.log(role);
+  
   return (req, res, next) => {
-    if (req.isAuthenticated() && req.user.role === role) {
+    if (req.user.role === role) {
       next();
-    } if(req.isAuthenticated() && req.user.role === '') {
-        res.redirect('/role-selection')
     } else {
       next(createError(403, 'Insufficient privileges'))
     }

@@ -18,30 +18,32 @@ module.exports.profile = (req, res, next) => {
     .then(user => {
         console.log(user)
 
-        if(user.role === 'user') {
-            res.render('partials/users/user', {
-                user: req.user
-            })
-        } else if (user.role === 'artist'){
-            // Query de Mongoose
+        if(user.role === 'bar') {
             Event.find({'artist': id})
             .then(events => {
-
+            res.render('partials/bars/bar', {
+                bar: req.user,
+                compareIDS: [req.user._id, id]
+            })
+            })
+        } else if (user.role === 'artist'){
+            Event.find({'artist': id})
+            .then(events => {
                 res.render('partials/artists/artist', {
                     artist: req.user,
-                    events
+                    events,
+                    compareIDS: [req.user._id, id]
                 })
             })
             .catch(err => {
                 next(err)
             })
 
-        } else {
-            res.render('partials/bars/bar', {
-                bar: req.user
+        } else { 
+            res.render('partials/users/user', {
+                user: req.user
             })
         }
-        
     })
     .catch(error => {
         next(error)

@@ -6,13 +6,21 @@
       <h6 class="title">{{artist.name}}</h6>
       <h6 class="card-subtitle m-2 text-muted">Price <span>{{event.price}} €</span></h6>
     </div>
-        <a href="/events/{{event.id}}/edit" class="btn btn-outline-warning btn-sm mb-1">Edit</a>
+    </div>
+  <div class="container">
+      <div class="row">
+          <a href="/events/{{event.id}}/edit" class="btn btn-outline-warning mt-2">Edit</a>
 
-  <form action="/events/{{event.id}}/delete" method="post">
-    <button class="btn btn-outline-danger btn-sm">Delete</button>
-  </form>
-
+          <form action="/events/{{event.id}}/delete" method="post">
+            <button class="btn btn-outline-danger mt-2 ml-2">Delete</button>
+          </form>
+      </div>
   </div>
+
+  
+
+
+  
 
   <a href="/bars/{{bar.id}}" ><i class="fa fa-angle-left mt-5" aria-hidden="true"></i></a>
 
