@@ -15,16 +15,16 @@ module.exports.profile = (req, res, next) => {
     console.log(user);
 
     User.findById(id)
+    
     .populate('events')
     .then(user => {
-        console.log(user)
-
         if(user.role === 'bar') {
-            Event.find({'artist': id})
+            Event.find({'bar': id})
             .then(events => {
             res.render('partials/bars/bar', {
                 bar: req.user,
-                compareIDS: [req.user._id, id]
+                compareIDS: [req.user._id, id],
+                events
             })
             })
         } else if (user.role === 'artist'){
@@ -41,9 +41,13 @@ module.exports.profile = (req, res, next) => {
             })
 
         } else { 
-            res.render('partials/users/user', {
-                user: req.user
-            })
+            Event.find({'users': id})
+                .then(events => {
+                    res.render('partials/users/user', {
+                        user: req.user,
+                        events
+                    })
+                })
         }
     })
     .catch(error => {
