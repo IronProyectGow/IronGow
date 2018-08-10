@@ -18,13 +18,19 @@ module.exports.list = (req, res, next) => {
 module.exports.detail = (req, res, next) => {
     const id = req.params.id;
 
+    console.log('User Session is: ', req.user._id);
+    console.log('Artist Profile ID: ', id)
+
     Artist.findById(id)
         .then(artist => {
             Event.find({'artist': id})
             .then(events => {
-                console.log('Event', events)
                 if(events) {
-                    res.render('partials/artists/artist', { artist, events })
+                    res.render('partials/artists/artist', { 
+                        artist,
+                        events,
+                        compareIDS: [req.user._id, id]
+                    })
                 } else {
                     res.render('partials/bars/bar', { artist })
                 }

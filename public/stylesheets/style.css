@@ -11,6 +11,10 @@ body{
     padding-bottom: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 header.masthead {
     position: relative;
     height: 100vh;
