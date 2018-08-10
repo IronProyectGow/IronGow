@@ -16,7 +16,7 @@ class="ml-5">
   <divv class="form-group">
     <label for="description">Artist</label>
 
-    <select name="artist" class="form-control" id="artist">
+    <select name="artist" class="form-control col-md-1" id="artist">
       {{#each artists as |artist|}}
         <option value="{{artist._id}}">{{artist.name}}</option>
       {{/each}}

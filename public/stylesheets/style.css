@@ -11,6 +11,10 @@ body{
     padding-bottom: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 header.masthead {
     position: relative;
     height: 100vh;
@@ -227,5 +231,5 @@ input.form-control{
 
 #map {
   height: 400px;  
-  width: 100%;
+  width: 65%;
  }

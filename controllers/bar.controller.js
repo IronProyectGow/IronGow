@@ -23,7 +23,8 @@ module.exports.detail = (req, res, next) => {
             Event.find({'bar': id})
                 .then(events => {
                     if(events) {
-                        res.render('partials/bars/bar', {bar, events})
+                        res.render('partials/bars/bar', {bar, events,
+                        compareIDS: [req.user._id, id]})
                     } else {
                         res.render('partials/bars/bar', { bar })
                     }
