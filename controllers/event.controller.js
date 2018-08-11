@@ -75,11 +75,25 @@ module.exports.edit = (req, res, next) => {
         .then(event => {
             Bar.findById(event.bar)
                 .then(bar => {
-                    if (bar) {
-                        res.render('partials/events/event_form', { event, bar})
-                    } else {
-                        res.render('partials/events/event', { event })
-                    }
+                    Artist.find({})
+                    .then(artists => {
+                        Artist.findById(event.artist)
+                        .then(singleArtist => {
+                            if (bar) {
+                                res.render('partials/events/event_form', { 
+                                    event,
+                                    bar,
+                                    artists,
+                                    singleArtist: singleArtist._id
+                                })
+                            } else {
+                                res.render('partials/events/event', { event })
+                            }
+                        })
+                    })
+                    .catch(err => {
+                        console.error(err);
+                    })
                 })
         })
         .catch(error => {next(error);})
