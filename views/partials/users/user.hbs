@@ -1,15 +1,25 @@
 <div class="container">
-  <h1 class="title">My profile</h1>
-<div class="card mt-3" style="max-width: 15rem;">
-  <div class="card-header">{{ user.email }}  </div>
-  <div class="card-body">
-    <div class="text-left">
-      <img src="{{ user.photo }}" alt="picture" class="img-thumbnail mb-1">
-    </div>
-    <p class="card-title text-cente">{{ user.name }}</p>
-  </div>
-</div>
-</div>
+  <div class="row">
+    <div class="col-md">
+        <h1 class="title">My profile</h1>
+        <div class="card mt-3" style="max-width: 15rem;">
+          <div class="card-header">{{ user.email }}  </div>
+          <div class="card-body">
+            <div class="text-left">
+              <img src="{{ user.photo }}" alt="picture" class="img-thumbnail mb-1">
+            </div>
+            <p class="card-title text-cente">{{ user.name }}</p>
+          </div>
+        </div>
+        </div>
+      <div class="col-md">
 
-{{> events/event_list }}
+          <h2 class="title">Events I'm gonna attend</h2>
+          {{> events/event_list }}
+      </div>
+    </div>
+  </div>
+
+
+
 
