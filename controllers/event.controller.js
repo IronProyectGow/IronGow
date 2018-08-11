@@ -45,19 +45,25 @@ module.exports.detail = (req, res, next) => {
                                 User.findById(user.id)
                                     .then((user)=> {
                                         if (bar) {
-                                            console.log(bar._id);
-                                            console.log(event.bar)
-                                            res.render('partials/events/event', { event, bar, artist, user, 
-                                            compareIDS: [bar._id, event.bar] })
-                                        } else {
-                                            res.render('partials/events/event', { event })
-                                        }
-                                    })
-                            
-                        })
-                    
-                })
+                                            console.log('BAR ID:', bar._id);
+                                            console.log('EVENT ID:', event.bar);
 
+                                            res.render('partials/events/event', { 
+                                                event, 
+                                                bar, 
+                                                artist, 
+                                                user, 
+                                                compareIDS: [bar._id, event.bar] 
+                                            })
+                                        } else {
+                                            res.render('partials/events/event', { 
+                                                event,
+                                                compareIDS: [bar._id, event.bar]
+                                            })
+                                        }
+                                    })  
+                        })
+                })
         })
         .catch(error => {next(error);})
 }
