@@ -9,9 +9,9 @@
         <h6 class="title mt-2">{{artist.description}}</h6>
         <h6 class="card-subtitle m-2 text-muted">Genre: <span>{{artist.genre}}</span></h6>
     </div>
-    {{#isArtist compareIDS }}
+    {{#isSelf compareIDS }}
         <a id="editBtn" href="/artists/{{artist.id}}/edit" class="btn btn-outline-warning btn-sm">Edit</a>
-    {{/isArtist}}
+    {{/isSelf}}
   </div>
     <a href="/artists" ><i class="fa fa-angle-left mt-3" aria-hidden="true"></i></a>
 </div>

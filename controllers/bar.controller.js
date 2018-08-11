@@ -22,9 +22,12 @@ module.exports.detail = (req, res, next) => {
         .then(bar => {
             Event.find({'bar': id})
                 .then(events => {
-                    if(events) {
-                        res.render('partials/bars/bar', {bar, events,
-                        compareIDS: [req.user._id, id]})
+                    if(events) {                                                
+                        res.render('partials/bars/bar', {
+                            bar, 
+                            events,
+                            compareIDS: [req.user._id, id]
+                        })
                     } else {
                         res.render('partials/bars/bar', { bar })
                     }

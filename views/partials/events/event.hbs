@@ -7,10 +7,10 @@
       <h6 class="card-subtitle m-2 text-muted">Price <span>{{event.price}} €</span></h6>
     </div>
     </div>
+
   <div class="container">
       <div class="row">
           <a href="/events/{{event.id}}/edit" class="btn btn-outline-warning mt-2">Edit</a>
-
           <form action="/events/{{event.id}}/delete" method="post">
             <button class="btn btn-outline-danger mt-2 ml-2">Delete</button>
           </form>
@@ -18,24 +18,12 @@
   </div>
   
   <form action="/events/{{event.id}}/follow" method="post">
-    <button class="btn btn-outline-success btn-sm" name='follow' value='{{user.id}}'>Follow this event</button>
+    <button class="btn btn-outline-success btn-sm mt-1" name='follow' value='{{user.id}}'>Follow this event</button>
   </form>
   
 
 
   <a href="/bars/{{bar.id}}" ><i class="fa fa-angle-left mt-5" aria-hidden="true"></i></a>
 
-
-
 </div>
 
-
-
-
-{{!-- // Evento
-// Artista
-// Sala
-// Location*
-// nombre
-// Fecha
-// Precio --}}
