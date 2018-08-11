@@ -4,7 +4,7 @@ module.exports.checkRole = (role) => {
     if (req.user.role === role) {
       next();
     } else {
-      next(createError(403, 'Insufficient privileges'))
+      next(createError(403, 'Sorry, you can not do that :('))
     }
   }
 }
