@@ -16,4 +16,12 @@ module.exports = (hbs) => {
       return options.inverse(this);
     }
   });
+
+  hbs.registerHelper('selectedHelper', function(option, value){
+    if (option == value) {
+        return ' selected';
+    } else {
+        return ''
+    }
+  });
 }
