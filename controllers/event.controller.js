@@ -94,7 +94,6 @@ module.exports.doEdit = (req, res, next) => {
         artist : req.body.artist
     }
 
-    console.log(req.body.artist);
     Event.findByIdAndUpdate(id, {$set : updateSet}, { new: true, runValidators: true })
         .then(event => {
             if (event) {
@@ -124,14 +123,10 @@ module.exports.follow = (req, res, next) => {
     const id = req.params.id;
     const follower = req.body.follow;
 
-    console.log(follower);
-
     Event.findByIdAndUpdate(id, {$push: {users: follower}}, { new: true, runValidators: true })
-        .then(event => {
+        .then(() => {
             User.findByIdAndUpdate(follower, {$push: {events: id}}, { new: true, runValidators: true } )
-                .then((user) => {
-                    console.log(event);
-                    console.log(user);
+                .then(() => {
                     res.redirect(`/events/${id}`)
                 })
         })
